@@ -700,12 +700,12 @@ def main(args):
     logger.debug(f"Scanner configuration - {config['scanner']}")
     
     # Create and start beacon advertiser or scanner
+    output = None
     try:
         if parsed_args['advertiser']:
             logger.info("Beacon advertiser mode selected.")
             advertiser = Advertiser(logger, **config['advertiser'])
             advertiser.advertise()
-            output = None
         elif parsed_args['scanner']:
             logger.info("Beacon scanner mode selected.")
             scanner = Scanner(logger, **config['scanner'])
