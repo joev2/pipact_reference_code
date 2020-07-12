@@ -680,6 +680,8 @@ def parse_args(args):
             help="Beacon advertiser interval (ms).")
     parser.add_argument('--revisit', type=int, 
             help="Beacon scanner revisit interval (s)")
+    parser.add_argument('-m', '--message',
+            help="Message to print to log file, e.g., experiment description")
     return vars(parser.parse_args(args))
     
 def main(args):
@@ -698,6 +700,8 @@ def main(args):
     logger = setup_logger(config['logger'])
     logger.debug(f"Beacon configuration - {config['advertiser']}")
     logger.debug(f"Scanner configuration - {config['scanner']}")
+    if parsed_args['message']:
+        logger.info(parsed_args['message'])
     
     # Create and start beacon advertiser or scanner
     output = None
