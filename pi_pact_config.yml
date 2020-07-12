@@ -22,7 +22,7 @@ scanner:
     
 # Logger configuration
 logger:
-  name: &name 'pi_pact.log'
+  name: &name '../data/pi_pact.log'
   config:
     version: 1
     formatters:
