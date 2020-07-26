@@ -701,7 +701,7 @@ def main(args):
     logger.debug(f"Beacon configuration - {config['advertiser']}")
     logger.debug(f"Scanner configuration - {config['scanner']}")
     if parsed_args['message']:
-        logger.info(parsed_args['message'])
+        logger.info("Experiment message: " + parsed_args['message'])
     
     # Create and start beacon advertiser or scanner
     output = None
